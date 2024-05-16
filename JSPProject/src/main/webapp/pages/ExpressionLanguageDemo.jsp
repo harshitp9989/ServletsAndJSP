@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="com.excelr.jspdemo.Person" %>
+    
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Expression Language Demo</title>
+</head>
+<body>
+    <h1>Expression Language (EL) Demo</h1>
+    <p>EL simplifies the access to JavaBeans properties, arrays, maps, and lists in JSP pages.</p>
+    
+    <h2>Example:</h2>
+    <p>Accessing a JavaBean property:</p>
+    <%-- Assume that you have a 'person' JavaBean with 'firstName' and 'lastName' properties --%>
+    <%
+        Person person = new Person();
+        person.setFirstName("MS");
+        person.setLastName("Dhoni");
+        pageContext.setAttribute("person", person);
+    %>
+    <p>Full Name: ${person.firstName} ${person.lastName}</p>
+    
+    <h2>Accessing a Map:</h2>
+    <%-- Create a map and set some values --%>
+    <%
+        java.util.Map<String, String> myMap = new java.util.HashMap<>();
+        myMap.put("name1", "Aarav");
+        myMap.put("name2", "Diya");
+        myMap.put("name3", "Arjun");
+        pageContext.setAttribute("myMap", myMap);
+    %>
+    
+    <p>Value for Name 1: ${myMap.name1}</p>
+    <p>Value for Name 2: ${myMap.name2}</p>
+    <p>Value for Name 3: ${myMap.name3}</p>
+    
+    <br>
+    <a href="../index.jsp">Back to Home</a>
+</body>
+</html>

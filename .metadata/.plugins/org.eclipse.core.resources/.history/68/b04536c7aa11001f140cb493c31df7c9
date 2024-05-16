@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: #64b5f6;
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      color: white;
+      padding: 20px;
+    }
+    
+    form {
+      margin: 0 auto;
+      width: 300px;
+      background-color: white;
+      padding: 20px;
+    }
+    
+    input[type="submit"], input[type="reset"] {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+    p {
+      text-align: center;
+      color: white;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Login Page</h1>
+  
+  <form action="Servlet1" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username2" name="username1" required><br><br>
+        
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+        
+    <input type="submit" value="Login">
+    <input type="reset" value="Reset">
+  </form>
+
+	<p>This is a simple login page. Enter your username and password to
+		login. When you click the "Login" button, the data will be sent to the
+		Servlet1 servlet. Servlet1 will store the username and password in the
+		session and redirect to another form page. On the second form page
+		(FetchUserDetails.html), you can enter additional details and submit
+		the form. The data from the second form will be sent to the Servlet2
+		servlet, which will store the additional values in the session and
+		redirect to the summary page (Summary.html). The summary page will
+		display all the entered details, including the username, password,
+		additional details, and a thank you message.</p>
+</body>
+</html>

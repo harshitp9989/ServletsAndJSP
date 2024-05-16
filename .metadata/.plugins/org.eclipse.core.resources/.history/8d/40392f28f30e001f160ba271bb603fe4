@@ -1,0 +1,41 @@
+package com.servlet.cookiesdemo;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/DeleteCookieServlet")
+public class DeleteCookieServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    // Handle POST requests
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // Get the name of the cookie to delete
+        String cookieName = request.getParameter("cookieName");
+
+        // Get all cookies from the request
+        Cookie[] cookies = request.getCookies();
+
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                // Check if the cookie name matches the provided name
+                if (cookie.getName().equals(cookieName)) {
+                    // Delete the cookie by setting its max age to 0 and adding it back to the response
+                    cookie.setMaxAge(0);
+                    response.addCookie(cookie);
+                    response.getWriter().println("Cookie deleted successfully!");
+                    return;
+                }
+            }
+        }
+
+        // If the cookie is not found, send a message
+        response.getWriter().println("Cookie not found!");
+    }
+}

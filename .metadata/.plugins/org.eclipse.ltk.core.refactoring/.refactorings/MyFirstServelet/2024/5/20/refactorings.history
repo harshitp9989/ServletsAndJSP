@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MyFirstServelet/src/main/webapp/Image20240514093515.jpg&apos; to &apos;jspbg.jpg&apos;" description="Rename resource &apos;Image20240514093515.jpg&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/Image20240514093515.jpg" name="jspbg.jpg" stamp="1715705017757" updateReferences="true"/>
+</session>

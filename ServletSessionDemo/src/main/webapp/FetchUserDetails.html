@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch User Details</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 8px 16px;
+            background-color: #4caf50;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the Servlet World</h2>
+        <p class="caption">Enter your details below and click Submit</p>
+        <form action="Servlet2" method="post">
+            <label for="thoughts">What's on your mind?</label>
+            <textarea id="thoughts" name="thoughts"></textarea>
+            
+            <label for="mood">Are you in a good mood today?</label>
+            <input type="radio" id="mood" name="mood" value="yes">Yes
+            <input type="radio" id="mood" name="mood" value="no">No
+            
+            <label for="secret">What's your secret?</label>
+            <input type="text" id="secret" name="secret">
+            
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
+        </form>
+    </div>
+</body>
+</html>
